@@ -9,8 +9,8 @@ def mean_median_mode(x):
     # Write code here
     mean = float(np.mean(M))
     median = float(np.median(M))
-    print(Counter(M).most_common(1)[0][0])
-    mode = float(Counter(M).most_common(1)[0][0])
+    count = Counter(x)
+    mode = float(max(count, key=lambda k: (count[k],-k) ))
 
     return (mean, median, mode)
-    pass
+    
